@@ -10,13 +10,19 @@ DOC = $(CWD)/doc
 LATEX = pdflatex -halt-on-error -interaction=batchmode -output-directory=$(TMP) -jobname=$(MODULE)
 
 # src
-TEX += tex/manual.tex $(wildcard tex/*.tex)
+TEX += $(wildcard tex/*.tex)
 
 ..PHONY: doc
 doc: doc/$(MODULE).pdf
 
-doc/$(MODULE).pdf: $(TEX)
-	cd tex ; $(LATEX) $< && $(LATEX) $<
+doc/$(MODULE).pdf: tmp/$(MODULE).pdf
+	gs -sDEVICE=pdfwrite -dCompatibilityLevel=1.4 -dPDFSETTINGS=/screen \
+		-dNOPAUSE -dQUIET -dBATCH \
+		-sOutputFile=$@ $<
+	ls -la $< $@
+
+tmp/$(MODULE).pdf: $(TEX)
+	cd $(CWD)/tex ; $(LATEX) manual && $(LATEX) manual
 
 # install
 .PHONY: install update doc ref
