@@ -1,2 +1,2 @@
-git make curl
+git make curl clang-format
 texlive-latex-extra texlive-lang-cyrillic
