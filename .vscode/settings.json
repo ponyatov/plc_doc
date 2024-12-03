@@ -1,0 +1,39 @@
+{
+    "multiCommand.commands": [
+        { "command": "multiCommand.altx",
+            "sequence": [ "workbench.action.files.saveAll",
+                { "command": "workbench.action.terminal.sendSequence",
+                    "args": {"text": "\u000D clear ; LANG=C make \u000D"}}]},
+    ],
+
+    // files
+    "files.exclude": {
+    },
+    "files.watcherExclude": {
+    },
+    "files.associations": {
+    },
+
+    // editor
+    "files.eol": "\n",
+    "editor.tabSize": 4,
+    "editor.insertSpaces": true,
+    "editor.detectIndentation": false,
+    "editor.rulers": [80],
+    "workbench.tree.indent": 24,
+    "editor.fontSize": 14,
+    "editor.lineNumbers": "on",
+    "explorer.autoReveal": false,
+    "files.insertFinalNewline": true,
+    "files.trimFinalNewlines": true,
+    "terminal.integrated.copyOnSelection": true,
+    // "git.enabled": false,
+
+    // clang-format
+    "clang-format.executable":     "clang-format",
+    "clang-format.fallbackStyle":  "Google",
+    "clang-format.style":          "file",
+
+    // LaTeX
+    "latex-workshop.latex.external.build.command": "make",
+}
