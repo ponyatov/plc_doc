@@ -1,4 +1,11 @@
 {
+    "multiCommand.commands": [
+        { "command": "multiCommand.altx",
+            "sequence": [ "workbench.action.files.saveAll",
+                { "command": "workbench.action.terminal.sendSequence",
+                    "args": {"text": "\u000D clear ; LANG=C make \u000D"}}]},
+    ],
+
     // files
     "files.exclude": {
     },
@@ -27,4 +34,6 @@
     "clang-format.fallbackStyle":  "Google",
     "clang-format.style":          "file",
 
+    // LaTeX
+    "latex-workshop.latex.external.build.command": "make",
 }
